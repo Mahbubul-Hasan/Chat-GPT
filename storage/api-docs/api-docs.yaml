@@ -54,3 +54,31 @@ paths:
                     type: string
                     example: 'Sorry, wrong email address or password. Please try again'
                 type: object
+  /api/v1/logout:
+    get:
+      tags:
+        - Authentication
+      summary: 'Sign out'
+      description: 'Sign out'
+      operationId: logout
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: 'Sign out successfully!'
+                type: object
+      security:
+        -
+          sanctum: []
+components:
+  securitySchemes:
+    sanctum:
+      type: apiKey
+      description: 'Enter token in format (Bearer <token>)'
+      name: Authorization
+      in: header

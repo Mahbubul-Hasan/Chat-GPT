@@ -64,7 +64,7 @@ class AuthController extends Controller {
             $response = [
                 'message' => "Sign in successfully!",
                 'user'    => new UserResource($user),
-                "token"   => $accessToken,
+                "token"   => "Bearer " . $accessToken,
             ];
             return response()->json($response, Response::HTTP_OK);
         } catch (\Throwable $th) {
