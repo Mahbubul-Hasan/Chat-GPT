@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class Controller extends BaseController
-{
+/**
+ * @OA\Info(
+ *      version="1.0.0",
+ *      title="Chat GPT API",
+ *      description="Chat GPT API description",
+ *      @OA\Contact(
+ *          email="mahbubul7497@gmail.com"
+ *      )
+ * )
+ */
+
+class Controller extends BaseController {
     use AuthorizesRequests, ValidatesRequests;
 }
