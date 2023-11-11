@@ -14,8 +14,8 @@ class ChatResource extends JsonResource {
     public function toArray($request) {
         return [
             'id'         => @$this->id,
-            'name'       => @$this->name,
-            'email'      => @$this->email,
+            'chat'       => @$this->chat,
+            'response'   => @$this->response,
             'createdAt'  => date('d M, Y', strtotime(@$this->created_at)),
             'createdAgo' => @$this->created_at->diffForHumans() ?? null,
         ];
