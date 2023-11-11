@@ -81,14 +81,34 @@
                 }
             }
         },
-        "/api/v1/logout": {
-            "get": {
+        "/api/v1/chat": {
+            "post": {
                 "tags": [
-                    "Authentication"
+                    "Chat By Open AI"
                 ],
-                "summary": "Sign out",
-                "description": "Sign out",
-                "operationId": "logout",
+                "summary": "Chat By Open AI",
+                "description": "Chat By Open AI",
+                "operationId": "chatByOpenAI",
+                "requestBody": {
+                    "description": "Credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "chat"
+                                ],
+                                "properties": {
+                                    "chat": {
+                                        "type": "string",
+                                        "example": "Hello"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -98,7 +118,40 @@
                                     "properties": {
                                         "message": {
                                             "type": "string",
-                                            "example": "Sign out successfully!"
+                                            "example": "Hello! How can I assist you today?"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/chat-histories": {
+            "get": {
+                "tags": [
+                    "Chat By Open AI"
+                ],
+                "summary": "Chat Histories",
+                "description": "Chat Histories",
+                "operationId": "chatHistories",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Chat histories"
                                         }
                                     },
                                     "type": "object"

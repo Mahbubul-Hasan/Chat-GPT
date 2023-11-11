@@ -33,6 +33,7 @@ class OpenAIController extends Controller {
      *          @OA\JsonContent(
      *              @OA\Property(property="message", type="string", example="Hello! How can I assist you today?")
      *         )
+     *      )
      * )
      */
 
@@ -41,12 +42,12 @@ class OpenAIController extends Controller {
     }
 
     /**
-     * @OA\Post(
+     * @OA\Get(
      *      path="/api/v1/chat-histories",
      *      summary="Chat Histories",
      *      description="Chat Histories",
-     *      operationId="chatByOpenAI",
-     *      tags={"chatHistories"},
+     *      operationId="chatHistories",
+     *      tags={"Chat By Open AI"},
      *      security={ {"sanctum": {} }},
      *      @OA\Response(
      *          response=200,
@@ -54,6 +55,7 @@ class OpenAIController extends Controller {
      *          @OA\JsonContent(
      *              @OA\Property(property="message", type="string", example="Chat histories")
      *         )
+     *      )
      * )
      */
 
