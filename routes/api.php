@@ -20,5 +20,6 @@ Route::prefix('v1')->group(function () {
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('chat', [OpenAIController::class, "chatByOpenAI"]);
+        Route::get('chat-histories', [OpenAIController::class, "chatHistories"]);
     });
 });
